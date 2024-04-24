@@ -3,6 +3,8 @@ import Manual from "views/examples/Manual.js";
 import Questions from "views/examples/Questions.js";
 import Roles from "views/examples/Roles.js";
 
+// test for push
+
 var routes = [
   {
     path: "/register",
