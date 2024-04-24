@@ -51,21 +51,21 @@ const Admin = (props) => {
         routes={routes}
         logo={{
           innerLink: "/auth/register",
-          imgSrc: require("../assets/img/brand/argon-react.png"),
+          imgSrc: require("../assets/img/brand/image.png"),
           imgAlt: "...",
         }}
       />
       <div className="main-content" ref={mainContent}>
-        <AdminNavbar
+        {/* <AdminNavbar
           {...props}
           brandText={getBrandText(props?.location?.pathname)}
-        />
+        /> */}
         <Routes>
           {getRoutes(routes)}
           <Route path="*" element={<Navigate to="/admin/index" replace />} />
         </Routes>
         <Container fluid>
-          <AdminFooter />
+          {/* <AdminFooter /> */}
         </Container>
       </div>
     </>
