@@ -6,9 +6,10 @@ import React from "react";
 
 // // core components
 import Header from "components/Headers/Header.js";
-import { Container, Row, Card, CardBody, Table } from 'reactstrap';
-import { CSVLink } from 'react-csv';
+import { Container, Row, Card, CardBody,Col, Button, ButtonGroup, CardTitle, CardText, CardImg, Table } from 'reactstrap';
 
+import { CSVLink } from 'react-csv';
+import { useNavigate } from "react-router-dom";
 // const MapWrapper = () => {
 //   const mapRef = React.useRef(null);
 //   React.useEffect(() => {
@@ -100,6 +101,9 @@ import { CSVLink } from 'react-csv';
 // };
 
 const Data = () => {
+  const buttonGroupStyle = {
+    marginBottom: '20px',
+  };
 
   // Example data for the table
   const tableData = [
@@ -116,7 +120,11 @@ const Data = () => {
     { label: "Feature", key: "feature" },
     { label: "Impact", key: "impact" }
   ];
+  const navigate = useNavigate();
 
+  const handleStartClick = () => {
+    navigate("/admin/reports"); // Update this path based on your actual routing setup
+  };
 
 
 
@@ -124,6 +132,14 @@ const Data = () => {
     <>
       <Header />
       <Container className="mt--7" fluid style={{ paddingTop: '120px' }}>
+      <Row>
+          <Col sm="12" md={{ size: 6, offset: 3 }} style={buttonGroupStyle}>
+            <ButtonGroup>
+              <Button  color="info">Data Results</Button>
+              <Button onClick={handleStartClick} color="info">Graph</Button>
+            </ButtonGroup>
+          </Col>
+        </Row>
         <Row>
           <div className="col">
             <Card className="shadow border-0">

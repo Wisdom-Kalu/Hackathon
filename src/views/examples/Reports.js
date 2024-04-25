@@ -1,6 +1,8 @@
 import React from 'react';
+import Header from "components/Headers/Header.js";
 import { Container, Row, Col, Button, ButtonGroup, Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from "react-router-dom";
 
 const Reports = () => {
   // Inline styles
@@ -57,13 +59,18 @@ const Reports = () => {
     alignItems: 'center',
     justifyContent: 'center',
   };
+  const navigate = useNavigate();
+
+  const handleStartClick = () => {
+    navigate("/admin/data"); // Update this path based on your actual routing setup
+  };
 
   // The positions for the labels and content boxes will be rough estimates
   // You'll need to adjust the top, left, right, and bottom values to match the design precisely
 
   return (
     <div>
-      <Navbar color="light" light expand="md" style={navbarStyle}>
+      {/* <Navbar color="light" light expand="md" style={navbarStyle}>
         <NavbarBrand href="/">Your Logo</NavbarBrand>
         <Nav className="ml-auto" navbar>
           <NavItem>
@@ -79,13 +86,13 @@ const Reports = () => {
             <NavLink href="/developer/">Developer</NavLink>
           </NavItem>
         </Nav>
-      </Navbar>
-
+      </Navbar> */}
+<Header />
       <Container>
         <Row>
           <Col sm="12" md={{ size: 6, offset: 3 }} style={buttonGroupStyle}>
             <ButtonGroup>
-              <Button color="info">Data Results</Button>
+              <Button onClick={handleStartClick} color="info">Data Results</Button>
               <Button color="info">Graph</Button>
             </ButtonGroup>
           </Col>
