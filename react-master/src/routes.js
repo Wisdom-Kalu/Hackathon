@@ -3,7 +3,7 @@ import Manual from "views/examples/Manual.js";
 import Questions from "views/examples/Questions.js";
 import Roles from "views/examples/Roles.js";
 import Home from "views/examples/Home";
-import Questionnaire from "views/examples/Questionnaire.js";
+import QuestionsForm from "views/examples/Questionnaire.js";
 import Reports from "views/examples/Reports";
 import Data from "views/examples/data";
 
@@ -47,7 +47,7 @@ var routes = [
   },
   {
     path: "/questionnaire",
-    component: <Questionnaire />,
+    component: <QuestionsForm />,
     layout: "/admin",
   }
 ];
