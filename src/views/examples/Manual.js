@@ -22,6 +22,8 @@ import { CSVLink } from "react-csv";
 const Manual = () => {
   const text1 = (
     <div>
+      <br></br>
+      <br></br>
       <p>
         <u>
           <strong>Welcome to Green Genius!</strong>
@@ -32,11 +34,13 @@ const Manual = () => {
       <p>
         A brief introduction on how this software is as <u>follows</u>
       </p>
-      <p>First, you will select your role in the product/service, as such</p>
+      <p>First, you will select your role in the product/service</p>
     </div>
   );
   const text2 = (
     <div>
+      <br></br>
+      <br></br>
       <p>
         Following this, enter the name of your product, as well as the number of
         features you’re{" "}
@@ -46,6 +50,8 @@ const Manual = () => {
   );
   const text3 = (
     <div>
+      <br></br>
+      <br></br>
       <p>
         After inputting this information, enter the name (and description,
         optional) for the{" "}
@@ -55,6 +61,8 @@ const Manual = () => {
   );
   const text4 = (
     <div>
+      <br></br>
+      <br></br>
       <p>
         After you have verified this information is correct, you can proceed
         using the next button.
@@ -63,6 +71,8 @@ const Manual = () => {
   );
   const text5 = (
     <div>
+      <br></br>
+      <br></br>
       <p>
         The next part is where you enter information regarding the various
         defined features. A{" "}
@@ -151,15 +161,14 @@ const Manual = () => {
               <CardBody>
                 <h3 style={{ fontSize: "2rem" }}>Use Information Manual</h3>
                 <CardText>{text1}</CardText>
-                <CardText>{"image1"}</CardText>
                 <CardText>{text2}</CardText>
-                <CardText>{"image2"}</CardText>
+                
                 <CardText>{text3}</CardText>
-                <CardText>{"image3"}</CardText>
+               
                 <CardText>{text4}</CardText>
-                <CardText>{"image4"}</CardText>
+               
                 <CardText>{text5}</CardText>
-                <CardText>{"image5"}</CardText>
+                
                 <CardText>{text6}</CardText>
                 {/* Additional components like MapWrapper can be included here if needed */}
               </CardBody>
