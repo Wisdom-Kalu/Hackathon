@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import { Button, Alert, Form, FormGroup, Label, Input, Col, Container, Card, CardHeader, Row, CardBody } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Questions() {
   const [projectName, setProjectName] = useState('');
   const [featureCount, setFeatureCount] = useState(3);
   const [features, setFeatures] = useState(new Array(3).fill(''));
   const [errors, setErrors] = useState({});
+
+  const navigate = useNavigate();
+
+  const handleStartClick = () => {
+    navigate('/admin/manual'); // Update this path based on your actual routing setup
+  };
 
   const handleProjectNameChange = (e) => {
     setProjectName(e.target.value);
@@ -173,7 +180,7 @@ function Questions() {
                 
                 <FormGroup row>
                   <Col sm={{ size: 10, offset: 2 }}>
-                      <Button color="primary">Next</Button>
+                      <Button onClick={handleStartClick} color="primary">Next</Button>
                       {Object.values(errors).map((error, index) => (
                         <Alert color="danger" key={index}>{error}</Alert>
                       ))}
