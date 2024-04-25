@@ -6,8 +6,12 @@ import React from "react";
 
 // // core components
 import Header from "components/Headers/Header.js";
+<<<<<<< HEAD
 import { Container, Row, Card, CardBody, CardTitle, CardText, CardImg, Table } from 'reactstrap';
 import { Col, Button, ButtonGroup, Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+=======
+import { Container, Row, Card, CardBody, Table } from 'reactstrap';
+>>>>>>> 677d64f6a98bb7a4fbab3ef20614cd64c9141c59
 import { CSVLink } from 'react-csv';
 import { useNavigate } from "react-router-dom";
 // const MapWrapper = () => {

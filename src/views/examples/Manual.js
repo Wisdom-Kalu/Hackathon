@@ -16,6 +16,8 @@ import {
   Table,
 } from "reactstrap";
 import { CSVLink } from "react-csv";
+import { Container, Row, Card, CardBody, CardTitle, CardText, CardImg, Table } from 'reactstrap';
+//import { CSVLink } from 'react-csv';
 
 // const MapWrapper = () => {
 //   const mapRef = React.useRef(null);
