@@ -7,7 +7,7 @@ import React from "react";
 // // core components
 import Header from "components/Headers/Header.js";
 import { Container, Row, Card, CardBody, CardTitle, CardText, CardImg, Table } from 'reactstrap';
-import { CSVLink } from 'react-csv';
+//import { CSVLink } from 'react-csv';
 
 // const MapWrapper = () => {
 //   const mapRef = React.useRef(null);
