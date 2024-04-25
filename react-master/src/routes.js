@@ -36,13 +36,13 @@ var routes = [
     component: <Questionnaire />,
     layout: "/admin",
   },
-  {
-    path: "/roles",
-    name: "Roles",
-    icon: "ni ni-settings-gear-65 text-purple",
-    component: <Roles />,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/roles",
+  //   name: "Roles",
+  //   icon: "ni ni-settings-gear-65 text-purple",
+  //   component: <Roles />,
+  //   layout: "/admin",
+  // },
 ];
 
 export default routes;
