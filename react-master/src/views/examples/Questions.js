@@ -115,7 +115,9 @@ function Questions() {
                     <Input type="select" name="role" id="role">
                       <option>Product Manager</option>
                       <option>Project Manager</option>
+                      <option>Project Manager + Product Manager</option>
                       <option>Developer</option>
+                      <option>Developer + Manager</option>
                       <option>Tester</option>
                     </Input>
                   </Col>
