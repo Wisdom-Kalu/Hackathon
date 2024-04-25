@@ -3,6 +3,7 @@ import Manual from "views/examples/Manual.js";
 import Questions from "views/examples/Questions.js";
 import Roles from "views/examples/Roles.js";
 import Home from "views/examples/Home";
+import Questionnaire from "views/examples/Questionnaire.js";
 
 // test for push
 
@@ -22,10 +23,17 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "/questions",
+    path: "/question",
     name: "Questions",
     icon: "ni ni-chat-round text-green",
     component: <Questions />,
+    layout: "/admin",
+  },
+  {
+    path: "/questionnaire",
+    name: "Questionnaire",
+    icon: "ni ni-chat-round text-green",
+    component: <Questionnaire />,
     layout: "/admin",
   },
   {
