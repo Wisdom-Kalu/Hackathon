@@ -99,7 +99,7 @@ import { CSVLink } from 'react-csv';
 //   );
 // };
 
-const Maps = () => {
+const Data = () => {
 
   // Example data for the table
   const tableData = [
@@ -162,4 +162,4 @@ const Maps = () => {
     </>
   );
 };
-export default Maps;
+export default Data;

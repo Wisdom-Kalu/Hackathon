@@ -12,7 +12,7 @@ function Questions() {
   const navigate = useNavigate();
 
   const handleStartClick = () => {
-    navigate('/admin/manual'); // Update this path based on your actual routing setup
+    navigate('/admin/questionnaire'); // Update this path based on your actual routing setup
   };
 
   const handleProjectNameChange = (e) => {

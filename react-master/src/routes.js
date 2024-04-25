@@ -5,6 +5,7 @@ import Roles from "views/examples/Roles.js";
 import Home from "views/examples/Home";
 import Questionnaire from "views/examples/Questionnaire.js";
 import Reports from "views/examples/Reports";
+import Data from "views/examples/data";
 
 // test for push
 
@@ -37,13 +38,18 @@ var routes = [
     component: <Reports/>,
     layout: "/admin",
   },
-  // {
-  //   path: "/roles",
-  //   name: "Roles",
-  //   icon: "ni ni-settings-gear-65 text-purple",
-  //   component: <Roles />,
-  //   layout: "/admin",
-  // },
+  {
+    path: "/data",
+    // name: "Roles",
+    // icon: "ni ni-settings-gear-65 text-purple",
+    component: <Data />,
+    layout: "/admin",
+  },
+  {
+    path: "/questionnaire",
+    component: <Questionnaire />,
+    layout: "/admin",
+  }
 ];
 
 export default routes;
