@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Container, Collapse, Button, Form, FormGroup, Label, Input, Card, CardBody } from 'reactstrap';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { useNavigate } from "react-router-dom";
 
 const QuestionsForm = () => {
   // Provided questions and options
+
   const questions = [
     {
       question: 'How does the software feature minimize energy consumption?',
@@ -53,7 +55,11 @@ const QuestionsForm = () => {
     newRemainingPoints[index] -= newValue;
     setRemainingPoints(newRemainingPoints);
   };
+  const navigate = useNavigate();
 
+  const handleStartClick = () => {
+    navigate("/admin/reports"); // Update this path based on your actual routing setup
+  };
   return (
     <Container>
       <Card className="p-3">
@@ -108,7 +114,7 @@ const QuestionsForm = () => {
               </div>
             </Card>
           ))}
-          <Button color="primary" className="mt-3">Finish</Button>
+          <Button onClick={handleStartClick} color="primary" className="mt-3">Finish</Button>
         </Form>
       </Card>
     </Container>

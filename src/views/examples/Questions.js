@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import { Button, Alert, Form, FormGroup, Label, Input, Col, Container, Card, CardHeader, Row, CardBody } from 'reactstrap';
+import { useNavigate } from "react-router-dom";
 
 function Questions() {
   const [projectName, setProjectName] = useState('');
   const [featureCount, setFeatureCount] = useState(3);
   const [features, setFeatures] = useState(new Array(3).fill(''));
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
+  // const handleStartClick = () => {
+  //   navigate("/admin/reports"); // Update this path based on your actual routing setup
+  // };
+  
   const handleProjectNameChange = (e) => {
     setProjectName(e.target.value);
   };
@@ -75,6 +81,7 @@ function Questions() {
       };
       console.log(projectData);
       // Proceed to the next page or handle the project data
+      navigate("/admin/questionnaire");
     }
   };
 
@@ -97,7 +104,7 @@ function Questions() {
   
         </Col>
         <Col className="order-xl-1 mb-5 mb-xl-0" xl="10">
-          <Card className="bg-secondary shadow">
+          <Card className="bg-white shadow">
             <CardHeader className="bg-white border-0">
               <Row className="align-items-center">
                 <Col xs="8">
