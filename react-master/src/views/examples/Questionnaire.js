@@ -21,10 +21,19 @@ const QuestionsForm = () => {
       ]
     },
     {
-      question: 'How does the software handle user authentication?',
+      question: 'In what ways does the software feature support environmental sustainability?',
       subQuestions: [
-        'A. Uses OAuth for third-party authentication.',
-        'B. Implements two-factor authentication for enhanced security.'
+    "Encourages paperless operations and transactions.",
+    "Integrates with other eco-friendly software systems.",
+    "Reduces the need for travel through remote capabilities.",
+    "Tracks environmental metrics like carbon footprint.",
+    "Supports user settings for eco-friendly operations.",
+    "Educates users about sustainability through in-app content.",
+    "Uses artificial intelligence to optimize resource allocation.",
+    "Monitors and suggests optimization for resource use.",
+    "Aligns with international standards for environmental sustainability.",
+    "Features are developed with a focus on minimal environmental impact."
+        
       ]
     }
   ];
@@ -36,6 +45,13 @@ const QuestionsForm = () => {
     const newIsOpen = [...isOpen];
     newIsOpen[index] = !newIsOpen[index];
     setIsOpen(newIsOpen);
+  };
+
+  const handleSubQuestionChange = (index, subIndex, event) => {
+    const newRemainingPoints = [...remainingPoints];
+    const newValue = parseInt(event.target.value, 10) || 0;
+    newRemainingPoints[index] -= newValue;
+    setRemainingPoints(newRemainingPoints);
   };
 
   return (
@@ -65,7 +81,13 @@ const QuestionsForm = () => {
                           <li key={subIndex}>
                             <Label check className="d-flex align-items-center justify-content-between">
                               {subQuestion}
-                              <Input type="text" className="ml-2 input-sm" style={{ width: '150px' }} />
+                              <Input
+                                type="number"
+                                className="ml-2 input-sm"
+                                style={{ width: '150px' }}
+                                min={0}
+                                onChange={(event) => handleSubQuestionChange(index, subIndex, event)}
+                              />
                             </Label>
                           </li>
                         ))}
