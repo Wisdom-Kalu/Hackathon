@@ -1,7 +1,9 @@
 import Manual from "views/examples/Manual.js";
 import Questions from "views/examples/Questions.js";
 import Home from "views/examples/Home";
-import Questionnaire from "views/examples/Questionnaire.js";
+import QuestionsForm from "views/examples/Questionnaire";
+import Reports from "views/examples/Reports";
+import Data from "views/examples/data";
 
 // test for push
 
@@ -28,19 +30,24 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "/questionnaire",
-    name: "Questionnaire",
-    icon: "ni ni-chat-round text-green",
-    component: <Questionnaire />,
+    path: "/reports",
+    name: "Reports",
+    icon: "ni ni-chart-bar-32 text-blue",
+    component: <Reports/>,
     layout: "/admin",
   },
-  // {
-  //   path: "/roles",
-  //   name: "Roles",
-  //   icon: "ni ni-settings-gear-65 text-purple",
-  //   component: <Roles />,
-  //   layout: "/admin",
-  // },
+  {
+    path: "/data",
+    // name: "Roles",
+    // icon: "ni ni-settings-gear-65 text-purple",
+    component: <Data />,
+    layout: "/admin",
+  },
+  {
+    path: "/questionnaire",
+    component: <QuestionsForm />,
+    layout: "/admin",
+  }
 ];
 
 export default routes;
