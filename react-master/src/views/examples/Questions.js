@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Button, Form, FormGroup, Label, Input, Col, Container, Card, CardHeader, Row, CardBody } from 'reactstrap';
+import { Button, Alert, Form, FormGroup, Label, Input, Col, Container, Card, CardHeader, Row, CardBody } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 function ProjectForm() {
   const [projectName, setProjectName] = useState('');
   const [featureCount, setFeatureCount] = useState(3);
   const [features, setFeatures] = useState(new Array(3).fill(''));
+  const [errors, setErrors] = useState({});
 
   const handleProjectNameChange = (e) => {
     setProjectName(e.target.value);
@@ -37,6 +38,48 @@ function ProjectForm() {
     setFeatures(updatedFeatures);
   };
 
+  const validateForm = () => {
+    let isValid = true;
+    const newErrors = {};
+
+    if (!projectName.trim()) {
+      newErrors.projectName = 'Project name is required.';
+      isValid = false;
+    }
+
+    if (featureCount <= 0) {
+      newErrors.featureCount = 'Feature count must be greater than zero.';
+      isValid = false;
+    }
+
+    features.forEach((feature, index) => {
+      if (!feature.trim()) {
+        newErrors[`feature${index}`] = `Feature ${index + 1} is required.`;
+        isValid = false;
+      }
+    });
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Reset errors
+    setErrors({});
+    
+    if (validateForm()) {
+      // If the form is valid, process the form submission
+      const projectData = {
+        projectName,
+        features
+      };
+      console.log(projectData);
+      // Proceed to the next page or handle the project data
+    }
+  };
+
+/*
   const handleSubmit = (event) => {
     event.preventDefault();
     // Handle the submission logic here
@@ -46,7 +89,7 @@ function ProjectForm() {
     };
     console.log(projectData);
   };
-
+*/
   return (
 
     <Container className="my-5">
@@ -91,6 +134,7 @@ function ProjectForm() {
                       id="project-name"
                       value={projectName}
                       onChange={handleProjectNameChange}
+                      required
                     />
                   </Col>
                 </FormGroup>
@@ -105,6 +149,7 @@ function ProjectForm() {
                       value={featureCount}
                       onChange={handleFeatureCountChange}
                       min="0"
+                      required
                     />
                   </Col>
                 </FormGroup>
@@ -126,9 +171,10 @@ function ProjectForm() {
                 
                 <FormGroup row>
                   <Col sm={{ size: 10, offset: 2 }}>
-                    <Link to="/roles">
                       <Button color="primary">Next</Button>
-                    </Link>
+                      {Object.values(errors).map((error, index) => (
+                        <Alert color="danger" key={index}>{error}</Alert>
+                      ))}
                   </Col>
                 </FormGroup>
               </Form>
