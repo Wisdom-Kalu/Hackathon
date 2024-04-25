@@ -11,8 +11,13 @@ import {
   CardBody,
 } from "reactstrap";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-
+import { useNavigate } from 'react-router-dom';
 const QuestionsForm = () => {
+  const navigate = useNavigate();
+
+  const handleStartClick = () => {
+    navigate('/admin/reports'); // Update this path based on your actual routing setup
+  };
   const questions = [
     {
       question: "How does the software feature minimize energy consumption?",
@@ -169,7 +174,7 @@ const QuestionsForm = () => {
             </div>
           ))}
           <div></div>
-          <Button color="primary" className="mt-3">
+          <Button onClick={handleStartClick} color="primary" className="mt-3">
             Finish
           </Button>
         </Form>
