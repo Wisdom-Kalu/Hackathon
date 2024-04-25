@@ -1,4 +1,3 @@
-import { useState } from "react";
 // react component that copies the given text inside your clipboard
 import { useNavigate } from 'react-router-dom';
 // reactstrap components
