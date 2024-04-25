@@ -20,7 +20,7 @@ import {
 // core components
 import Header from "components/Headers/Header.js";
 
-const Icons = () => {
+const Home = () => {
   const [copiedText, setCopiedText] = useState();
   const navigate = useNavigate();
 
@@ -90,4 +90,4 @@ const Icons = () => {
   );
 };
 
-export default Icons;
+export default Home;
