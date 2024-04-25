@@ -30,6 +30,7 @@ const QuestionsForm = () => {
   ];
 
   const [isOpen, setIsOpen] = useState(new Array(questions.length).fill(false));
+  const [remainingPoints, setRemainingPoints] = useState(new Array(questions.length).fill(10));
 
   const toggleCollapse = (index) => {
     const newIsOpen = [...isOpen];
@@ -52,6 +53,12 @@ const QuestionsForm = () => {
                 <CardBody>
                   <FormGroup>
                     <Label>{question.question}</Label>
+                    {isOpen[index] && (
+                      <FormGroup>
+                        <Label for="remainingPoints">Remaining Points</Label>
+                        <Input type="text" name="remainingPoints" id="remainingPoints" value={remainingPoints[index]} readOnly />
+                      </FormGroup>
+                    )}
                     <Collapse isOpen={isOpen[index]}>
                       <ul>
                         {question.subQuestions.map((subQuestion, subIndex) => (
