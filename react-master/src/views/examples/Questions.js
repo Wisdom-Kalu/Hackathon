@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Alert, Form, FormGroup, Label, Input, Col, Container, Card, CardHeader, Row, CardBody } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-function ProjectForm() {
+function Questions() {
   const [projectName, setProjectName] = useState('');
   const [featureCount, setFeatureCount] = useState(3);
   const [features, setFeatures] = useState(new Array(3).fill(''));
