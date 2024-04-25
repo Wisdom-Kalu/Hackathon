@@ -1,229 +1,83 @@
+import React, { useState } from 'react';
+import { Container, Collapse, Button, Form, FormGroup, Label, Input, Card, CardBody } from 'reactstrap';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
-// reactstrap components
-import {
-    Button,
-    Card,
-    CardHeader,
-    CardBody,
-    FormGroup,
-    Form,
-    Input,
-    Container,
-    Row,
-    Col,
-  } from "reactstrap";
-  // core components
-  import UserHeader from "components/Headers/UserHeader.js";
-  
-  const Questions = () => {
-    return (
-      <>
-        <UserHeader />
-        {/* Page content */}
-        <Container className="mt--7" fluid>
-          <Row>
-            <Col className="order-xl-2 mb-5 mb-xl-0" xl="4">
-            </Col>
-            <Col className="order-xl-1" xl="8">
-              <Card className="bg-secondary shadow">
-                <CardHeader className="bg-white border-0">
-                  <Row className="align-items-center">
-                    <Col xs="8">
-                      <h3 className="mb-0">My account</h3>
-                    </Col>
-                    <Col className="text-right" xs="4">
-                      <Button
-                        color="primary"
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                        size="sm"
-                      >
-                        Settings
-                      </Button>
-                    </Col>
-                  </Row>
-                </CardHeader>
-                <CardBody>
-                  <Form>
-                    <h6 className="heading-small text-muted mb-4">
-                      User information
-                    </h6>
-                    <div className="pl-lg-4">
-                      <Row>
-                        <Col lg="6">
-                          <FormGroup>
-                            <label
-                              className="form-control-label"
-                              htmlFor="input-username"
-                            >
-                              Username
-                            </label>
-                            <Input
-                              className="form-control-alternative"
-                              defaultValue="lucky.jesse"
-                              id="input-username"
-                              placeholder="Username"
-                              type="text"
-                            />
-                          </FormGroup>
-                        </Col>
-                        <Col lg="6">
-                          <FormGroup>
-                            <label
-                              className="form-control-label"
-                              htmlFor="input-email"
-                            >
-                              Email address
-                            </label>
-                            <Input
-                              className="form-control-alternative"
-                              id="input-email"
-                              placeholder="jesse@example.com"
-                              type="email"
-                            />
-                          </FormGroup>
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col lg="6">
-                          <FormGroup>
-                            <label
-                              className="form-control-label"
-                              htmlFor="input-first-name"
-                            >
-                              First name
-                            </label>
-                            <Input
-                              className="form-control-alternative"
-                              defaultValue="Lucky"
-                              id="input-first-name"
-                              placeholder="First name"
-                              type="text"
-                            />
-                          </FormGroup>
-                        </Col>
-                        <Col lg="6">
-                          <FormGroup>
-                            <label
-                              className="form-control-label"
-                              htmlFor="input-last-name"
-                            >
-                              Last name
-                            </label>
-                            <Input
-                              className="form-control-alternative"
-                              defaultValue="Jesse"
-                              id="input-last-name"
-                              placeholder="Last name"
-                              type="text"
-                            />
-                          </FormGroup>
-                        </Col>
-                      </Row>
-                    </div>
-                    <hr className="my-4" />
-                    {/* Address */}
-                    <h6 className="heading-small text-muted mb-4">
-                      Contact information
-                    </h6>
-                    <div className="pl-lg-4">
-                      <Row>
-                        <Col md="12">
-                          <FormGroup>
-                            <label
-                              className="form-control-label"
-                              htmlFor="input-address"
-                            >
-                              Address
-                            </label>
-                            <Input
-                              className="form-control-alternative"
-                              defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
-                              id="input-address"
-                              placeholder="Home Address"
-                              type="text"
-                            />
-                          </FormGroup>
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col lg="4">
-                          <FormGroup>
-                            <label
-                              className="form-control-label"
-                              htmlFor="input-city"
-                            >
-                              City
-                            </label>
-                            <Input
-                              className="form-control-alternative"
-                              defaultValue="New York"
-                              id="input-city"
-                              placeholder="City"
-                              type="text"
-                            />
-                          </FormGroup>
-                        </Col>
-                        <Col lg="4">
-                          <FormGroup>
-                            <label
-                              className="form-control-label"
-                              htmlFor="input-country"
-                            >
-                              Country
-                            </label>
-                            <Input
-                              className="form-control-alternative"
-                              defaultValue="United States"
-                              id="input-country"
-                              placeholder="Country"
-                              type="text"
-                            />
-                          </FormGroup>
-                        </Col>
-                        <Col lg="4">
-                          <FormGroup>
-                            <label
-                              className="form-control-label"
-                              htmlFor="input-country"
-                            >
-                              Postal code
-                            </label>
-                            <Input
-                              className="form-control-alternative"
-                              id="input-postal-code"
-                              placeholder="Postal code"
-                              type="number"
-                            />
-                          </FormGroup>
-                        </Col>
-                      </Row>
-                    </div>
-                    <hr className="my-4" />
-                    {/* Description */}
-                    <h6 className="heading-small text-muted mb-4">About me</h6>
-                    <div className="pl-lg-4">
-                      <FormGroup>
-                        <label>About Me</label>
-                        <Input
-                          className="form-control-alternative"
-                          placeholder="A few words about you ..."
-                          rows="4"
-                          defaultValue="A beautiful Dashboard for Bootstrap 4. It is Free and
-                          Open Source."
-                          type="textarea"
-                        />
-                      </FormGroup>
-                    </div>
-                  </Form>
-                </CardBody>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
-      </>
-    );
+const QuestionsForm = () => {
+  // Provided questions and options
+  const questions = [
+    {
+      question: 'How does the software feature minimize energy consumption?',
+      subQuestions: [
+        'A. Implements energy-saving modes during inactivity.',
+        'B. Optimized algorithms for reduced CPU intensity.',
+        'C. Uses cloud services with a commitment to renewable energy.',
+        'D. Reduces the need for physical hardware through virtualization.',
+        'E. Includes settings for users to control energy use.',
+        'F. Efficient memory management to minimize resource usage.',
+        'G. Does not require high-performance hardware to operate.',
+        'H. Energy consumption metrics are provided to users.',
+        'I. Adapts resource use according to the device’s power source.',
+        'J. Regular updates include optimization for energy efficiency.'
+      ]
+    },
+    {
+      question: 'How does the software handle user authentication?',
+      subQuestions: [
+        'A. Uses OAuth for third-party authentication.',
+        'B. Implements two-factor authentication for enhanced security.'
+      ]
+    }
+  ];
+
+  const [isOpen, setIsOpen] = useState(new Array(questions.length).fill(false));
+
+  const toggleCollapse = (index) => {
+    const newIsOpen = [...isOpen];
+    newIsOpen[index] = !newIsOpen[index];
+    setIsOpen(newIsOpen);
   };
-  
-  export default Questions;
-  
+
+  return (
+    <Container>
+      <h2 className="mt-3">Feature Questionnaire</h2>
+      <Form>
+        {questions.map((question, index) => (
+          <Card key={index} className="mb-3">
+            <div className="d-flex justify-content-between">
+              <CardBody>
+                <FormGroup>
+                  <Label>{question.question}</Label>
+                  <Collapse isOpen={isOpen[index]}>
+                    <ul>
+                      {question.subQuestions.map((subQuestion, subIndex) => (
+                        <li key={subIndex}>
+                          <Label check className="d-flex align-items-center">
+                            {subQuestion}
+                            <Input type="text" className="ml-2 input-sm" />
+                          </Label>
+                        </li>
+                      ))}
+                    </ul>
+                  </Collapse>
+                </FormGroup>
+              </CardBody>
+              {!isOpen[index] && (
+                <Button color="link" onClick={() => toggleCollapse(index)}>
+                  <FaChevronDown />
+                </Button>
+              )}
+              {isOpen[index] && (
+                <Button color="link" onClick={() => toggleCollapse(index)}>
+                  <FaChevronUp />
+                </Button>
+              )}
+            </div>
+          </Card>
+        ))}
+        <Button color="primary" className="mt-3">Finish</Button>
+      </Form>
+    </Container>
+  );
+};
+
+export default QuestionsForm;
