@@ -30,9 +30,9 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "/questionnaire",
-    name: "Questionnaire",
-    icon: "ni ni-chat-round text-green",
+    path: "/reports",
+    name: "Reports",
+    icon: "ni ni-chart-bar-32 text-blue",
     component: <Questionnaire />,
     layout: "/admin",
   },
