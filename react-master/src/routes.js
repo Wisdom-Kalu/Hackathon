@@ -2,17 +2,18 @@ import Register from "views/examples/Register";
 import Manual from "views/examples/Manual.js";
 import Questions from "views/examples/Questions.js";
 import Roles from "views/examples/Roles.js";
+import Home from "views/examples/Home";
 import Questionnaire from "views/examples/Questionnaire.js";
 
 // test for push
 
 var routes = [
   {
-    path: "/register",
+    path: "/home",
     name: "Home",
     icon: "ni ni-shop text-blue",
-    component: <Register />,
-    layout: "/auth",
+    component: <Home />,
+    layout: "/admin",
   },
   {
     path: "/manual",
@@ -35,13 +36,13 @@ var routes = [
     component: <Questionnaire />,
     layout: "/admin",
   },
-  {
-    path: "/roles",
-    name: "Roles",
-    icon: "ni ni-settings-gear-65 text-purple",
-    component: <Roles />,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/roles",
+  //   name: "Roles",
+  //   icon: "ni ni-settings-gear-65 text-purple",
+  //   component: <Roles />,
+  //   layout: "/admin",
+  // },
 ];
 
 export default routes;
