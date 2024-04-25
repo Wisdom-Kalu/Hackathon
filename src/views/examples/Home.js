@@ -1,27 +1,18 @@
-import { useState } from "react";
 // react component that copies the given text inside your clipboard
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useNavigate } from 'react-router-dom';
 // reactstrap components
 import {
   Card,
-  CardHeader,
   CardTitle,
-  CardSubtitle,
-  CardText,
   Button,
   CardBody,
-  CardImg,
   Container,
   Row,
-  Col,
-  UncontrolledTooltip,
+  Col
 } from "reactstrap";
 // core components
-import Header from "components/Headers/Header.js";
-
 const Home = () => {
-  const [copiedText, setCopiedText] = useState();
+ // const [copiedText, setCopiedText] = useState();
   const navigate = useNavigate();
 
   const handleStartClick = () => {
