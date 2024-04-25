@@ -13,7 +13,7 @@ import {
   Row,
   CardBody,
 } from "reactstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Questions() {
   const [projectName, setProjectName] = useState("");
@@ -108,7 +108,7 @@ function Questions() {
         features,
       };
       console.log(projectData);
-      navigate("/questionnaire");
+      navigate('/admin/questionnaire');
       // Construct the URL with features as parameters
     }
   };

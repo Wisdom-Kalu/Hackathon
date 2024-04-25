@@ -5,4 +5,5 @@ package-lock.json
 .eslintcache
 src/.DS_Store
 ./DS_Store
+node_modules
 
