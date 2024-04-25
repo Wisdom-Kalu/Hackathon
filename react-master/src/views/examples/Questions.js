@@ -42,6 +42,10 @@ const QuestionsForm = () => {
       <Card className="p-3">
         <h2 className="mt-3 mb-4">Feature Questionnaire</h2>
         <Form>
+          <FormGroup>
+            <Label for="feature">Feature</Label>
+            <Input type="text" name="feature" id="feature" placeholder="Enter feature" />
+          </FormGroup>
           {questions.map((question, index) => (
             <Card key={index} className="mb-3">
               <div className="d-flex justify-content-between">
@@ -49,7 +53,7 @@ const QuestionsForm = () => {
                   <FormGroup>
                     <Label>{question.question}</Label>
                     <Collapse isOpen={isOpen[index]}>
-                      <ol>
+                      <ul>
                         {question.subQuestions.map((subQuestion, subIndex) => (
                           <li key={subIndex}>
                             <Label check className="d-flex align-items-center justify-content-between">
@@ -58,7 +62,7 @@ const QuestionsForm = () => {
                             </Label>
                           </li>
                         ))}
-                      </ol>
+                      </ul>
                     </Collapse>
                   </FormGroup>
                 </CardBody>
