@@ -147,7 +147,8 @@ function Questions() {
                   <Col sm={4}>
                     <Input type="select" name="role" id="role">
                       <option>Product Manager</option>
-                      <option>Project Manager</option>
+                      <option>Product Manager</option>
+                      <option>Project Manager + Product Manager</option>
                       <option>Developer</option>
                       <option>Tester</option>
                     </Input>
