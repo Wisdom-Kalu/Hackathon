@@ -90,7 +90,9 @@ const Manual = () => {
         these anyway you{" "}
       </p>
       <p>wish, as long as the total points add up to exactly ten. </p>
-      <p style={{ textIndent: "2em" }}>
+      <br></br>
+      <br></br>
+      <p>
         For example, you could add ten points to one impact and zero for the
         rest, one point{" "}
       </p>
