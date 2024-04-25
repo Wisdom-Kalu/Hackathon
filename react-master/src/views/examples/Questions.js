@@ -134,7 +134,7 @@ function Questions() {
       <Row>
         <Col className="order-xl-2 mb-5 mb-xl-0" xl="2"></Col>
         <Col className="order-xl-1 mb-5 mb-xl-0" xl="10">
-          <Card className="bg-secondary shadow">
+          <Card className="bg-white shadow">
             <CardHeader className="bg-white border-0">
               <Row className="align-items-center">
                 <Col xs="8">
@@ -219,7 +219,7 @@ function Questions() {
 
                 <FormGroup row>
                   <Col sm={{ size: 10, offset: 2 }}>
-                    <Button color="primary">Next</Button>
+                    <Button onClick={handleStartClick} color="primary">Next</Button>
                     {Object.values(errors).map((error, index) => (
                       <Alert color="danger" key={index}>
                         {error}
